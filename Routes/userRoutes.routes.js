@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router();
 const bodyparser = require("body-parser")
 const signup = require('../middlewares/Registration.middleware')
+const log_in = require('../middlewares/LogIn.middleware')
 const flag =0;
 
 router.use(bodyparser.urlencoded({extended:false}))
@@ -29,7 +30,7 @@ router.post("/register",signup,(req,res)=>{
     res.redirect("/dashboard")
     
 });
-router.post("/login",(req,res)=>{
+router.post("/login",log_in,(req,res)=>{
     
     res.redirect("/dashboard")
 });
