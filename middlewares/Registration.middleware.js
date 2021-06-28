@@ -14,7 +14,7 @@ const signup =(req,res,next)=>{
             var sql = `INSERT INTO register(Full_Name,Email,Password) VALUES ('${fullname}', '${email}','${hash}')`;
             con.query(sql, function (err, result) {
                 if (err) throw err;
-                console.log("1 record inserted");
+                console.log("user data inserted");
               }); 
         });
         
